@@ -7,7 +7,7 @@
           <component :is="currentPage"></component>
         </keep-alive>
         <cc-footer>
-          <p class="text-center">&copy; {{ appName }}</p>
+          <p class="text-center" slot="app-name">&copy; {{ appName }}</p>
           <nav>
             <ul class="nav justify-content-center">
               <li class="nav-item">
@@ -28,6 +28,7 @@
 </template>
 
 <script>
+// import Firebase from './firebaseConfig.js';
 import Header from "./components/Header";
 import CardFront from "./components/card/cardFront";
 import CardInsideLeft from "./components/card/cardInsideLeft";

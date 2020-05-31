@@ -1,8 +1,10 @@
 <template>
   <footer>
-    <slot>
+    <slot name="app-name">
       <p>Footer text - fallback </p>
+
     </slot>
+    <slot></slot>
   </footer>
 </template>
 
