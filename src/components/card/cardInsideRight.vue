@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <h1>Card Inside Right</h1>
+  <div class="row">
+    <div class="col-sm-6 card edit-area"></div>
+    <div class="col-sm-6 card card-display"></div>
   </div>
 </template>
 

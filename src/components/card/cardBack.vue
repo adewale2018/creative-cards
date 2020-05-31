@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <h1>Card BACK...</h1>
+  <div class="row">
+    <div class="col-sm-6 card edit-area"></div>
+    <div class="col-sm-6 card card-display"></div>
   </div>
 </template>
 
 <script>
-export default {
-  
-}
+export default {};
 </script>
 
 <style>
-  
 </style>
