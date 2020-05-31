@@ -6,6 +6,22 @@
         <keep-alive>
           <component :is="currentPage"></component>
         </keep-alive>
+        <cc-footer>
+          <p class="text-center">&copy; {{ appName }}</p>
+          <nav>
+            <ul class="nav justify-content-center">
+              <li class="nav-item">
+                <a class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+        </cc-footer>
       </div>
     </div>
   </div>
@@ -17,11 +33,13 @@ import CardFront from "./components/card/cardFront";
 import CardInsideLeft from "./components/card/cardInsideLeft";
 import CardInsideRight from "./components/card/cardInsideRight";
 import CardBack from "./components/card/cardBack";
+import Footer from "./components/Footer";
 
 export default {
   data: function() {
     return {
-      currentPage: "cardFront"
+      currentPage: "cardFront",
+      appName: "Creative Cards..."
     };
   },
   components: {
@@ -29,7 +47,8 @@ export default {
     cardFront: CardFront,
     CardInsideLeft: CardInsideLeft,
     CardInsideRight: CardInsideRight,
-    CardBack: CardBack
+    CardBack: CardBack,
+    ccFooter: Footer
   }
 };
 </script>
