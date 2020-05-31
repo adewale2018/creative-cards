@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import CardFront from "./components/card/cardFront.vue";
-import CardInsideLeft from "./components/card/cardInsideLeft.vue";
-import CardInsideRight from "./components/card/cardInsideRight.vue";
+import Header from "./components/Header";
+import CardFront from "./components/card/cardFront";
+import CardInsideLeft from "./components/card/cardInsideLeft";
+import CardInsideRight from "./components/card/cardInsideRight";
 import CardBack from "./components/card/cardBack";
 
 

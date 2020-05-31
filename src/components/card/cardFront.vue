@@ -1,12 +1,28 @@
 <template>
   <div class="row">
-    <div class="col-sm-6 card edit-area"></div>
+    <div class="col-sm-6 card edit-area">
+      <cc-text-input @displayTextChanged="textBoxValue1 = $event"></cc-text-input>
+      <cc-text-input displayTextChanged="textBoxValue2 = $event"></cc-text-input>
+      <cc-text-input displayTextChanged="textBoxValue3 = $event"></cc-text-input>
+    </div>
     <div class="col-sm-6 card card-display"></div>
   </div>
 </template>
 
 <script>
-export default {};
+import TextInput from "../TextInput";
+export default {
+  data: function() {
+    return {
+      textBoxValue1: "",
+      textBoxValue2: "",
+      textBoxValue3: ""
+    };
+  },
+  components: {
+    ccTextInput: TextInput
+  }
+};
 </script>
 
 <style>
