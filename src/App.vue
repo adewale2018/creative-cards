@@ -3,7 +3,9 @@
     <div class="row">
       <div class="col-sm-12">
         <nav-header @pageWasChanged="currentPage=$event"></nav-header>
-        <component :is="currentPage"></component>
+        <keep-alive>
+          <component :is="currentPage"></component>
+        </keep-alive>
       </div>
     </div>
   </div>
@@ -16,7 +18,6 @@ import CardInsideLeft from "./components/card/cardInsideLeft";
 import CardInsideRight from "./components/card/cardInsideRight";
 import CardBack from "./components/card/cardBack";
 
-
 export default {
   data: function() {
     return {
@@ -28,7 +29,7 @@ export default {
     cardFront: CardFront,
     CardInsideLeft: CardInsideLeft,
     CardInsideRight: CardInsideRight,
-    CardBack: CardBack,
+    CardBack: CardBack
   }
 };
 </script>
