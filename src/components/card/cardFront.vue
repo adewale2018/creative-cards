@@ -14,6 +14,7 @@
       <cc-text-input
         @displayTextChanged="textBoxValue3 = $event"
       ></cc-text-input>
+      <cc-section-completed></cc-section-completed>
     </div>
     <div class="col-sm-6 card card-display">
       <cc-text-output
@@ -42,6 +43,7 @@ import TextInput from "../TextInput";
 import TextOutput from "../TextOutput";
 import ImageUpload from "../ImageUpload";
 import ImageOutput from "../ImageOutput";
+import SectionCompleted from "../SectionCompleted";
 
 export default {
   data: function() {
@@ -64,6 +66,7 @@ export default {
     ccTextOutput: TextOutput,
     ccImageUpload: ImageUpload,
     ccImageOutput: ImageOutput,
+    ccSectionCompleted: SectionCompleted,
   },
 };
 </script>
