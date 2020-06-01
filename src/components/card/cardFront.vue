@@ -23,6 +23,7 @@
       <cc-image-output
         :displayImage="imageName"
         :containerHeight="350"
+        :clearImageProp="clearImage"
       ></cc-image-output>
       <cc-text-output
         :displayText="textBoxValue2"
@@ -50,6 +51,13 @@ export default {
       textBoxValue3: "",
       imageName: "",
     };
+  },
+  methods: {
+    clearImage: function() {
+      if (this.imageName != "") {
+        this.imageName = "waterfall.jpeg";
+      }
+    },
   },
   components: {
     ccTextInput: TextInput,

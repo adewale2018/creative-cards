@@ -11,20 +11,53 @@
     </form>
     <div class="form-check form-check-inline">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" value="left" v-model="setTextAlign" /> Left
+        <input
+          type="radio"
+          class="form-check-input"
+          value="left"
+          v-model="setTextAlign"
+        />
+        Left
       </label>
     </div>
     <div class="form-check form-check-inline">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" value="center" v-model="setTextAlign" /> Center
+        <input
+          type="radio"
+          class="form-check-input"
+          value="center"
+          v-model="setTextAlign"
+        />
+        Center
       </label>
     </div>
     <div class="form-check form-check-inline">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" value="right" v-model="setTextAlign" /> Right
+        <input
+          type="radio"
+          class="form-check-input"
+          value="right"
+          v-model="setTextAlign"
+        />
+        Right
       </label>
     </div>
-    <p :style="styleObj">{{ displayText }}</p>
+
+    <div class="form-check form-check-inline">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" v-model="setBold" />
+        Bold
+      </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" v-model="setItalic" />
+        Italic
+      </label>
+    </div>
+    <p :style="styleObj" :class="{ bold: setBold, italic: setItalic }">
+      {{ displayText }}
+    </p>
   </div>
 </template>
 
@@ -36,6 +69,8 @@ export default {
       showOptions: false,
       setFontSize: "",
       setTextAlign: "",
+      setBold: false,
+      setItalic: false,
     };
   },
   props: {
@@ -67,5 +102,21 @@ p {
   border: 1px dotted grey;
   white-space: pre-line;
   overflow: hidden;
+}
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+form {
+  position: absolute;
+  border-bottom: 1px dotted grey;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+select {
+  height: 40%;
 }
 </style>
