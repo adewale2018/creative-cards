@@ -3,9 +3,11 @@
     <div class="row">
       <div class="col-sm-12">
         <nav-header @pageWasChanged="currentPage=$event"></nav-header>
-        <keep-alive>
-          <component :is="currentPage"></component>
-        </keep-alive>
+        <transition name="fade-enter">
+          <keep-alive>
+            <component :is="currentPage"></component>
+          </keep-alive>
+        </transition>
         <cc-footer>
           <p class="text-center" slot="app-name">&copy; {{ appName }}</p>
           <nav>
@@ -59,7 +61,16 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #333;
 }
+a {
+  cursor: pointer;
+}
 h1 {
   margin-top: 10px;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
 }
 </style>

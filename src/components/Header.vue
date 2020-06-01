@@ -15,15 +15,22 @@
         <a class="nav-link" @click="pageSelected='cardBack'">Back</a>
       </li>
     </ul>
+    <hr>
+    <cc-card-progress></cc-card-progress>
   </div>
 </template>
 
 <script>
+import CardProgress from "./card/CardProgress";
+
 export default {
   data: function() {
     return {
       pageSelected: ""
     };
+  },
+  components: {
+    ccCardProgress: CardProgress
   },
   watch: {
     pageSelected: function() {

@@ -1,63 +1,48 @@
 <template>
-  <div @mouseenter="showOptions = true" @mouseleave="showOptions = false">
-    <form class="small" v-show="showOptions">
-      <label for="selectBox">Font size: </label>
-      <select class="custom-select" id="selectBox" v-model="setFontSize">
-        <option value="42">42px</option>
-        <option value="48">48px</option>
-        <option value="56">56px</option>
-        <option value="64">64px</option>
-      </select>
-    </form>
-    <div class="form-check form-check-inline">
-      <label class="form-check-label">
-        <input
-          type="radio"
-          class="form-check-input"
-          value="left"
-          v-model="setTextAlign"
-        />
-        Left
-      </label>
-    </div>
-    <div class="form-check form-check-inline">
-      <label class="form-check-label">
-        <input
-          type="radio"
-          class="form-check-input"
-          value="center"
-          v-model="setTextAlign"
-        />
-        Center
-      </label>
-    </div>
-    <div class="form-check form-check-inline">
-      <label class="form-check-label">
-        <input
-          type="radio"
-          class="form-check-input"
-          value="right"
-          v-model="setTextAlign"
-        />
-        Right
-      </label>
-    </div>
+  <div @mouseover="showOptions = true" @mouseleave="showOptions =false">
+    <transition>
+      <form class="small" v-show="showOptions">
+        <label for="selectBox">Font size:</label>
+        <select class="custom-select" id="selectBox" v-model="setFontSize">
+          <option value="42">42px</option>
+          <option value="48">48px</option>
+          <option value="56">56px</option>
+          <option value="64">64px</option>
+        </select>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="left" v-model="setTextAlign" />
+            Left
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="center" v-model="setTextAlign" />
+            Center
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="right" v-model="setTextAlign" />
+            Right
+          </label>
+        </div>
 
-    <div class="form-check form-check-inline">
-      <label class="form-check-label">
-        <input type="checkbox" class="form-check-input" v-model="setBold" />
-        Bold
-      </label>
-    </div>
-    <div class="form-check form-check-inline">
-      <label class="form-check-label">
-        <input type="checkbox" class="form-check-input" v-model="setItalic" />
-        Italic
-      </label>
-    </div>
-    <p :style="styleObj" :class="{ bold: setBold, italic: setItalic }">
-      {{ displayText }}
-    </p>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" v-model="setBold" />
+            Bold
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" v-model="setItalic" />
+            Italic
+          </label>
+        </div>
+      </form>
+    </transition>
+    <p :style="styleObj" :class="{ bold: setBold, italic: setItalic }">{{ displayText }}</p>
   </div>
 </template>
 
@@ -70,25 +55,25 @@ export default {
       setFontSize: "",
       setTextAlign: "",
       setBold: false,
-      setItalic: false,
+      setItalic: false
     };
   },
   props: {
     displayText: [String],
     containerHeight: {
       type: Number,
-      default: 200,
-    },
+      default: 200
+    }
   },
   computed: {
     styleObj: function() {
       return {
         textAlign: this.setTextAlign,
         height: this.containerHeight + "px",
-        fontSize: this.setFontSize + "px",
+        fontSize: this.setFontSize + "px"
       };
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -44,8 +44,10 @@ import TextOutput from "../TextOutput";
 import ImageUpload from "../ImageUpload";
 import ImageOutput from "../ImageOutput";
 import SectionCompleted from "../SectionCompleted";
+import { clearImageMixins } from '../clearImageMixins';
 
 export default {
+  mixins: [ clearImageMixins ],
   data: function() {
     return {
       textBoxValue1: "",
@@ -54,13 +56,13 @@ export default {
       imageName: "",
     };
   },
-  methods: {
-    clearImage: function() {
-      if (this.imageName != "") {
-        this.imageName = "waterfall.jpeg";
-      }
-    },
-  },
+  // methods: {
+  //   clearImage: function() {
+  //     if (this.imageName != "") {
+  //       this.imageName = "waterfall.jpeg";
+  //     }
+  //   },
+  // },
   components: {
     ccTextInput: TextInput,
     ccTextOutput: TextOutput,

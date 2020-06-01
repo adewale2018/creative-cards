@@ -22,19 +22,14 @@
 import ImageUpload from "../ImageUpload";
 import ImageOutput from "../ImageOutput";
 import SectionCompleted from '../SectionCompleted';
+import { clearImageMixins } from '../clearImageMixins';
 
 export default {
+  mixins: [ clearImageMixins ],
   data: function() {
     return {
       imageName: "",
     };
-  },
-  methods: {
-    clearImage: function() {
-      if (this.imageName != "") {
-        this.imageName = "waterfall.jpeg";
-      }
-    },
   },
   components: {
     ccImageUpload: ImageUpload,

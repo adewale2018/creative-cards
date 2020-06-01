@@ -18,7 +18,7 @@
 <script>
 import TextInput from "../TextInput";
 import TextOutput from "../TextOutput";
-import SectionCompleted from "../SectionCompleted";
+import SectionCompleted from '../SectionCompleted';
 
 export default {
   data: function() {

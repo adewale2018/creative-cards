@@ -5,6 +5,7 @@
     @mouseover="showOptions = true"
     @mouseleave="showOptions = false"
   >
+  <transition name="scale">
     <button
       type="button"
       class="btn btn-outline-danger btn-sm"
@@ -13,6 +14,7 @@
     >
       Remove Image
     </button>
+    </transition>
     <img id="outputImage" /> {{ displayImage }}
   </div>
 </template>
