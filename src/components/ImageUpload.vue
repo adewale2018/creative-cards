@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import Firebase from "firebase";
+import Firebase from "../firebaseConfig";
 
 export default {
   data: function() {

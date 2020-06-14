@@ -30,7 +30,6 @@
 </template>
 
 <script>
-// import Firebase from './firebaseConfig.js';
 import Header from "./components/Header";
 import CardFront from "./components/card/cardFront";
 import CardInsideLeft from "./components/card/cardInsideLeft";
